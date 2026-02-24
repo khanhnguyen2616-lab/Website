@@ -1,0 +1,1510 @@
+
+/* RESET & GLOBAL*/
+*{
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+.wrapper{
+  max-inline-size: 1000px;
+  margin-inline:auto;
+}
+body{
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:1rem;
+  background-color: #FFF9F0;
+}
+
+img{
+  max-inline-size: 100%;
+  display:block;
+}
+.hero-img {
+  width: 100%;
+  height: 600px;         
+  object-fit: cover;    
+  display: block;
+  margin-block: 6rem;
+}
+p{
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+h1,h2{
+  color:#C41E3A;
+}
+
+h1 span{
+  display:block;
+  padding-block: 1rem;
+}
+.text-content {
+    flex: 1 1 45%;
+    min-width: 300px;
+}
+section {
+  margin-block: 3rem 4rem;  
+}
+
+.two-column-layout{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+ul{
+    list-style: none;
+}
+/* ===== HEADER ===== */
+header {
+  position: sticky;
+  top: 0;
+  background: #FFF9F0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.menu{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 10px 30px;
+}
+
+.menu img{
+  height:5rem;
+}
+/* ===== NAVIGATION ===== */
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #C41E3A;
+  font-weight: 600;
+  padding: 8px 12px;
+  transition: 0.25s;
+  position: relative;
+  font-size: 1rem;
+}
+nav a:hover {
+  color: #2E7D32;
+}
+
+nav a:hover::after {
+  width: 80%;
+}
+/* ===== DROPDOWN ===== */
+.dropdown{
+  position: relative;
+}
+
+.dropdown-btn{
+  color:#b30000;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.dropdown-btn:hover{
+  color:#2E7D32;
+}
+
+.dropdown-content{
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  position:absolute;
+  top:100%;
+  left:0;
+  background:linear-gradient(180deg,#fff8e1,#ffe9b3);
+  min-width:160px;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  padding:8px 0;
+  transition:all 0.3s ease;
+  z-index:999;
+}
+
+.dropdown-content a{
+  display:block;
+  padding:10px 16px;
+  color:#b30000;
+  font-weight:500;
+}
+
+.dropdown-content a:hover{
+  background:#b30000;
+  color:white;
+}
+
+.dropdown:hover .dropdown-content{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+/* ===== FOOTER ===== */
+footer {
+  background: #FCE4D6;
+  padding: 2rem 1.5rem;
+  border-top: 3px solid #C41E3A;
+  margin-top: 4rem;
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+/* =====BUTTON ===== */
+.my-button{
+  display:inline-block;
+  background:#C41E3A;
+  color:white;
+  padding:0.8rem 1.6rem;
+  border-radius:2rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.2s ease;
+}
+.my-button:hover{
+  background:#2E7D32;
+}
+
+
+.blog-wrapper{
+  max-inline-size: 800px;
+  margin-inline:auto;
+
+}
+
+/* ===== BACK TO TOP BUTTON ===== */
+.back-to-top{
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background: #111;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0.4;
+  transition: all 0.3s ease;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.back-to-top:hover{
+  opacity: 1;
+  transform: translateY(-5px);
+  background: #8B0000;
+}
+
+
+
+/* ===== TRANG CHỦ ===== */
+/*BANNER*/
+.banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(Images/banner.jpg);
+  background-position: center;
+  background-size: cover;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-top: 0.2rem solid #C41E3A;
+  margin-top: 0;
+}
+
+.banner h1 {
+  font-size: 3.5rem;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+.banner h1 span {
+  display: block;
+  letter-spacing: 4px;
+  color: white;
+}
+/* Gallery layout */
+.gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.big {
+  grid-row: span 2;
+  height: 24rem;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.small {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.small img {
+  height: 11.5rem;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+/* Three column layout */
+.three-column-layout {
+  display: flex;
+  gap: 2rem;
+  text-align: center;
+}
+
+.three-column-layout .small {
+  flex: 1;
+  background: #FFF9F0;
+  padding: 1.5rem;
+  border-radius: 12px;
+
+  transition: 0.3s;
+}
+.three-column-layout img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+.three-column-layout a{
+    margin-top: auto;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+/* Quote wrapper */
+.quote-wrapper {
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 3rem;
+  border: 2px solid #C41E3A;
+  border-radius: 16px;
+  text-align: center;
+  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(Images/trongdong.jpg) center/cover;
+}
+
+.quote-wrapper h2 {
+  color: #C41E3A;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.quote-wrapper p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #2E7D32;
+  font-style: italic;
+}
+/* ===== TRANG GIỚI THIỆU ===== */
+/*VIDEO*/
+video{
+    display:block;
+}
+.bg-video {
+    display: block;  /* Video mặc định là inline, có khoảng trống phía dưới */
+    width: 100%;
+     height: 100%; 
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+   
+}
+.section-desc{
+    text-align:center;
+    font-size:1.25rem;
+}
+.video-section{
+  margin :0;
+  
+}
+/* Editor choice section */
+
+.gioithieu {
+    margin-block: 3rem 4rem; 
+    padding: 0;             
+}
+
+.editorchoice {
+    display: flex;
+    flex-wrap: wrap;         
+    gap: 2rem;               
+    align-items: center;     
+    justify-content: space-between;
+    background-color: #FFF6E8;
+}
+
+.text-part {
+    flex: 1 1 45%;          
+    min-width: 300px;
+    text-align: center;     
+}
+
+.gioithieu h3 {
+    color: #FFD700;        
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.gioithieu h2 {
+    color: #2E7D32;         
+    font-size: 2.2rem;
+    margin: 0.5rem 0 1rem;
+}
+
+.gioithieu p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #2C2C2C;
+    margin-bottom: 1.5rem;
+    padding: 0;             
+}
+
+.intro-img {
+    flex: 1 1 45%;           /* chiếm 45% bên cạnh */
+    max-width: 500px;        /* giới hạn kích thước ảnh */
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.blog-banner{
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),  /* lớp phủ đen mờ */
+        url(Images/langDongSon.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-block: 6rem;
+    padding-inline: 2rem;
+    font-size: 1rem;
+    margin-top: 0;
+}
+/* ===== TRANG PHONG TỤC ===== */
+.banner-tradition{
+ background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        url(Images/setty_010.JPG);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    text-align: center;
+    min-height: 75vh;          
+    border-top:0.2rem solid #C41E3A;
+}
+.banner-tradition h1{
+    font-size: 2.8rem;
+    line-height: 1.2;
+    font-weight: 800;
+    color:white;
+    margin: 0;  
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+.banner-tradition h1 span {
+  display: block;
+  font-size: 1.5rem;
+  color: #FFD700;
+  margin-bottom: 1rem;
+  letter-spacing: 3px;
+}
+/*Timeline navigation*/
+.timeline {
+  position: sticky;
+  top: 100px;   /* bằng chiều cao header */
+  background: #FFF9F0;
+  z-index: 900;
+}
+.tet-nav ul{
+  display: flex; 
+  justify-content: center;             
+  gap: 40px;               
+  list-style: none;        
+  padding: 0;
+  margin: 0;
+}
+
+.tet-nav a{
+  text-decoration: none;     
+  color: #2C2C2C;
+  font-weight: 500;
+  position: relative;
+}
+
+.tet-nav a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #C41E3A;
+  transition: width 0.3s ease;
+}
+
+.tet-nav a:hover::after{
+  width: 100%;
+}
+/* Section tradition */
+.section-tradition{
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.section-tradition h2 {
+  color: #C41E3A;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-tradition p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #2C2C2C;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+/* FAQ section */
+.faq {
+  border-bottom: 1px solid #C41E3A;
+  padding: 1.5rem 0;
+  margin: 0;
+}
+
+.faq summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #2C2C2C;
+  padding: 0.5rem 0;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Icon dấu + - */
+.icon {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  flex-shrink: 0;
+  margin-left: 15px;
+}
+
+.icon::before,
+.icon::after {
+  content: "";
+  position: absolute;
+  background: #C41E3A;
+  transition: 0.3s ease;
+}
+
+.icon::before {
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.icon::after {
+  height: 100%;
+  width: 2px;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+/* Khi mở thì xoay thành dấu - */
+.faq[open] .icon::after {
+  transform: translateX(-50%) scaleY(0);
+}
+
+.faq .content {
+  padding: 1rem 0 0.5rem;
+  color: #2C2C2C;
+  line-height: 1.7;
+}
+
+.faq p {
+  margin: 0.5rem 0;
+}
+.faq .content {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 0;
+}
+
+.faq[open] .content {
+  max-height: 500px;
+}
+/* Image block */
+.image-block {
+  margin: 3rem auto;
+  max-width: 800px;
+}
+
+.image-block img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.image-block figcaption {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ===== TRANG VĂN HOÁ ===== */
+/* Hero section - dùng chung style với index nhưng riêng nội dung */
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Images/hero-banner.jpg);
+  background-position: center;
+  background-size: cover;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-top: 0.2rem solid #C41E3A;
+  margin-top: 0;
+}
+
+.hero .wrapper {
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  color: white;
+  font-size: 3rem;
+  text-shadow: 2px 2px 5px black;
+  line-height: 1.3;
+}
+
+.hero h1 span {
+  display: block;
+}
+
+.hero h1 span:first-child {
+  font-size: 1.8rem;
+  color: #FFD700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 4px;
+}
+/* Culture intro - layout cho văn hoá */
+.culture-intro{
+  padding-block: 6rem;
+}
+
+.wrapper-culture{
+  max-width: 720px;    
+  margin-inline: auto;
+}
+
+.wrapper-culture p{
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #2C2C2C;
+  text-align: justify;  
+}
+.wrapper-culture img{
+  width: 100%;
+  height: 28rem;        
+  object-fit: cover;   
+  display: block;
+}
+/* Image block trong văn hoá */
+.wrapper-culture .image-block {
+  margin: 3rem 0;
+}
+.wrapper-culture .image-block img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.wrapper-culture .image-block figcaption {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.6;
+}
+/* ===== TRANG ẨM THỰC ===== */
+.food-banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Images/banhLam.jpg);
+  background-position: center;
+  background-size: cover;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 4rem;
+  margin-top:0;
+}
+
+.food-banner h1 {
+  color: white;
+  font-size: 3.5rem;
+  text-shadow: 2px 2px 5px black;
+}
+
+.food-banner h1 span {
+  display: block;
+  font-size: 1.8rem;
+  color: #FFD700;
+  letter-spacing: 4px;
+}
+/* Fashion layout */
+.fashion-item {
+  width: 100%;
+  margin-bottom: 6rem;
+  position: relative;
+}
+
+.fashion-image {
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+}
+
+.fashion-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.25s ease;
+}
+
+.fashion-image:hover img {
+  transform: scale(1.02);
+}
+
+.fashion-caption {
+  max-width: 400px;
+  margin-top: 1.5rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-left: 4px solid #C41E3A;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.fashion-caption h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin: 0 0 0.8rem 0;
+  color: #C41E3A;
+  letter-spacing: 2px;
+}
+
+.fashion-caption p {
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #2C2C2C;
+  margin: 0;
+  font-style: italic;
+}
+/* Đặt caption ở vị trí khác nhau cho mỗi item */
+.fashion-item.left .fashion-caption {
+    margin-left: 5%;
+}
+
+.fashion-item.right .fashion-caption {
+    margin-left: auto;
+    margin-right: 5%;
+    border-left: none;
+    border-right: 4px solid #2E7D32;
+    text-align: right;
+}
+
+.fashion-item.center .fashion-caption {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-left: none;
+    border-bottom: 4px solid #C41E3A;
+}
+/* Xem nguồn gốc*/
+.recipe-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #2E7D32;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.recipe-link:hover {
+  color: #C41E3A;
+  transform: translateX(5px);
+}
+
+/* ===============================
+   CONTACT SECTION
+================================ */
+.contact-section h2{
+  text-align:center;
+  margin-bottom:1rem;
+}
+
+.contact-form form{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+
+.contact-form label{
+  font-weight:600;
+  color:#2C2C2C;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding:0.8rem;
+  border:1px solid #ddd;
+  border-radius:8px;
+  font-family:inherit;
+  font-size:1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  outline:none;
+  border-color:#C41E3A;
+  box-shadow:0 0 5px rgba(196,30,58,0.3);
+}
+
+/* Map */
+.contact-map iframe{
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Author */
+.author-info{
+  margin-top:3rem;
+  padding:1.5rem;
+  background:#FCE4D6;
+  border-left:4px solid #C41E3A;
+  border-radius:12px;
+}
+.author-info h3{
+  margin-top:0;
+  color:#C41E3A;
+}
+
+/* ===============================
+          TRANG KÍ ỨC
+================================ */
+
+/* Timeline dọc bên trái */
+.tet-timeline {
+  position: fixed;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+
+.tet-timeline ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.tet-timeline a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  transition: 0.3s;
+  position: relative;
+  writing-mode: vertical-rl; /* chữ dọc */
+}
+
+.tet-timeline a::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 1px;
+  height: 0;
+  background: #C41E3A;
+  transition: height 0.3s;
+}
+
+.tet-timeline a:hover {
+  color: #C41E3A;
+}
+
+.tet-timeline a:hover::before {
+  height: 100%;
+}
+
+/* Memory title chính */
+.memory {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.memory h1 {
+  font-size: 64px;
+  font-weight: 400;
+  letter-spacing: 8px;
+  color: #111;
+  margin: 0;
+}
+
+
+.memory-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 0 0;
+  position: relative;
+}
+
+
+.memory-stack {
+  position: relative;
+  width: min(900px, 90vw);
+  margin: 0 auto;
+  aspect-ratio: 900 / 520;
+}
+
+.memory-stack img {
+  position: absolute;
+  width: 38.89%;
+  border-radius: 8px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  transition: 0.4s;
+}
+
+.memory-stack img:nth-child(1) {
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.memory-stack img:nth-child(2) {
+  top: 23%;    
+  left: 32.22%; 
+  z-index: 2;
+}
+
+.memory-stack img:nth-child(3) {
+  top: 46%;    
+  left: 64.44%; 
+  z-index: 1;
+}
+
+/* Title chung cho cả 3 thời kỳ */
+.section-title,
+.parent-title,
+.me-title {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  text-align: center;
+  width: 100%;
+  pointer-events: none; 
+}
+
+.section-title h2,
+.parent-title h2,
+.me-title h2 {
+  display: inline-block;
+  margin: 0;
+  padding: 20px 50px;
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
+}
+
+/* Thời ông bà */
+#ong-ba {
+  background: rgba(0, 0, 0, 0.4);
+  color: #e6d5b8;
+  border: 2px solid #b89b7a;
+  text-shadow: 3px 3px 0 #3e2c1b;
+  font-family: 'Times New Roman', serif;
+}
+
+/* Thời ba mẹ */
+#cha-me {
+  background: rgba(139, 69, 19, 0.6);
+  color: #f0e68c;
+  border: 3px solid #cd853f;
+  text-shadow: 2px 2px 0 #5a3e2b;
+  font-family: 'Courier New', monospace;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Thời tôi */
+#toi {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif; 
+  font-size: 4.2rem; 
+  font-weight: 800; 
+  letter-spacing: 2px; 
+  text-transform: uppercase; 
+  background: linear-gradient(90deg, #00c6ff, #0072ff); 
+  -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent; 
+   background-clip: text; 
+   text-shadow: 0 0 10px rgba(0, 114, 255, 0.6), 0 0 20px rgba(0, 198, 255, 0.4); padding: 20px 50px; 
+  border-radius: 8px;
+}
+
+/* Story section */
+.story-section {
+  max-width: 760px;
+  margin: 60px auto 100px;
+  padding: 0 20px;
+}
+
+.story-content {
+  background: #f9f1e0;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.story-content p {
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #3e2c1b;
+  margin-bottom: 25px;
+}
+
+.story-footer {
+  font-style: italic;
+  color: #7a5a3a;
+  text-align: right;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px dashed #C41E3A;
+}
+/* ===============================
+   RESPONSIVE FOR INDEX PAGE
+================================ */
+@media (max-width: 768px) {
+  .banner h1 {
+    font-size: 2.5rem;
+  }
+  
+  .banner h1 span {
+    font-size: 1.5rem;
+  }
+  
+  .two-column-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .three-column-layout {
+    flex-direction: column;
+  }
+  
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  .big {
+    height: 18rem;
+  }
+  
+  .small img {
+    height: 10rem;
+  }
+  
+  .quote-wrapper {
+    margin: 3rem 1rem;
+    padding: 2rem;
+  }
+  
+  .quote-wrapper p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    min-height: 50vh;
+  }
+  
+  .banner h1 {
+    font-size: 1.8rem;
+  }
+  
+  .banner h1 span {
+    font-size: 1.2rem;
+  }
+  
+  .big {
+    height: 15rem;
+  }
+  
+  .small img {
+    height: 8rem;
+  }
+  
+  .quote-wrapper {
+    padding: 1.5rem;
+  }
+  
+  .quote-wrapper h2 {
+    font-size: 1.5rem;
+  }
+}
+/* ===============================
+   RESPONSIVE FOR INTRODUCE PAGE
+================================ */
+@media (max-width: 768px) {
+  .video-section {
+    min-height: auto;
+    padding: 60px 0;
+  }
+  
+  .video-section .wrapper {
+    margin: 20px;
+    padding: 30px 15px;
+  }
+  
+  .video-section h1 {
+    font-size: 2rem;
+  }
+  
+  .section-desc {
+    font-size: 1rem;
+  }
+  
+  .editorchoice {
+    padding: 2rem;
+    gap: 2rem;
+  }
+  
+  .text-part h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-section h1 {
+    font-size: 1.5rem;
+  }
+  
+  .section-desc {
+    font-size: 0.95rem;
+  }
+  
+  .text-part h2 {
+    font-size: 1.5rem;
+  }
+  
+  .editorchoice {
+    padding: 1.5rem;
+  }
+}
+/* ===============================
+   RESPONSIVE FOR TRADITION PAGE
+================================ */
+/* Responsive */
+@media (max-width: 768px) {
+  .banner-tradition {
+    min-height: 50vh;
+  }
+  
+  .banner-tradition h1 {
+    font-size: 2rem;
+  }
+  
+  .banner-tradition h1 span {
+    font-size: 1.2rem;
+  }
+  
+  .timeline {
+    top: 70px;
+  }
+  
+  .tet-nav ul {
+    gap: 20px;
+    padding: 0 10px;
+  }
+  
+  .tet-nav a {
+    font-size: 0.9rem;
+  }
+  
+  .section-tradition h2 {
+    font-size: 1.6rem;
+  }
+  
+  .wrapper h2 {
+    font-size: 1.5rem;
+  }
+  
+  .image-block img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-tradition h1 {
+    font-size: 1.5rem;
+  }
+  
+  .banner-tradition h1 span {
+    font-size: 1rem;
+  }
+  
+  .tet-nav ul {
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .section-tradition h2 {
+    font-size: 1.3rem;
+  }
+  
+  .wrapper h2 {
+    font-size: 1.3rem;
+  }
+  
+  .image-block img {
+    height: 200px;
+  }
+  
+  .faq summary {
+    font-size: 1rem;
+  }
+}
+/* ===============================
+   RESPONSIVE FOR CULTURE PAGE
+================================ */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero h1 span:first-child {
+    font-size: 1.3rem;
+  }
+  
+  .wrapper-culture {
+    padding: 0 15px;
+  }
+  
+  .wrapper-culture p {
+    font-size: 1rem;
+  }
+  
+  .wrapper-culture h2 {
+    font-size: 1.6rem;
+  }
+  
+  .wrapper-culture .image-block img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 50vh;
+  }
+  
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+  
+  .hero h1 span:first-child {
+    font-size: 1rem;
+  }
+  
+  .wrapper-culture section {
+    margin: 2rem 0;
+    padding: 1rem 0;
+  }
+  
+  .wrapper-culture h2 {
+    font-size: 1.3rem;
+  }
+  
+  .wrapper-culture .image-block img {
+    height: 200px;
+  }
+  
+  .wrapper-culture strong {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+}
+/* ===============================
+   RESPONSIVE FOR CUISINE PAGE
+================================ */
+@media (max-width: 900px) {
+  .fashion-image {
+    height: 70vh;
+  }
+  
+  .fashion-caption {
+    max-width: 350px;
+    padding: 1.2rem 1.5rem;
+  }
+  
+  .fashion-caption h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .fashion-item {
+    margin-bottom: 4rem;
+  }
+  
+  .fashion-image {
+    height: 60vh;
+  }
+  
+  .fashion-caption {
+    max-width: 90%;
+    margin: 1.5rem auto 0 !important;
+    text-align: center !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 4px solid #C41E3A !important;
+  }
+  
+  .fashion-item.right .fashion-caption {
+    text-align: center;
+  }
+  
+  .food-banner h1 {
+    font-size: 2.5rem;
+  }
+  
+  .food-banner h1 span {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fashion-image {
+    height: 50vh;
+  }
+  
+  .fashion-caption {
+    padding: 1rem;
+  }
+  
+  .fashion-caption h3 {
+    font-size: 1.5rem;
+  }
+  
+  .fashion-caption p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===============================
+   RESPONSIVE FOR MEMORY PAGE
+================================ */
+@media (max-width: 900px) {
+  .tet-timeline {
+    left: 15px;
+  }
+  
+  .tet-timeline a {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+  }
+  
+  .memory h1 {
+    font-size: 3rem;
+    letter-spacing: 6px;
+  }
+  
+  .section-title h2,
+  .parent-title h2,
+  .me-title h2 {
+    font-size: 2.5rem;
+    padding: 12px 30px;
+    letter-spacing: 4px;
+  }
+}
+
+@media (max-width: 700px) {
+  .tet-timeline {
+    position: static;
+    transform: none;
+    margin: 30px 0 20px;
+    background: #FFF9F0;
+    padding: 15px 0;
+    border-top: 1px solid #C41E3A;
+    border-bottom: 1px solid #C41E3A;
+  }
+  
+  .tet-timeline ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .tet-timeline a {
+    writing-mode: horizontal-tb;
+    font-size: 0.9rem;
+    padding: 5px 0;
+  }
+  
+  .tet-timeline a::before {
+    left: 0;
+    bottom: -5px;
+    top: auto;
+    width: 0;
+    height: 2px;
+  }
+  
+  .tet-timeline a:hover::before {
+    width: 100%;
+    height: 2px;
+  }
+  
+  .memory h1 {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+  }
+  
+  .memory-stack img {
+    width: 45%;
+  }
+  
+  .memory-stack img:nth-child(2) {
+    top: 15%;
+    left: 25%;
+  }
+  
+  .memory-stack img:nth-child(3) {
+    top: 30%;
+    left: 50%;
+  }
+  
+  .section-title h2,
+  .parent-title h2,
+  .me-title h2 {
+    font-size: 2rem;
+    padding: 10px 20px;
+    letter-spacing: 3px;
+  }
+  
+  .story-content {
+    padding: 30px 25px;
+  }
+  
+  .story-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .memory h1 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+  }
+  
+  .tet-timeline ul {
+    gap: 15px;
+  }
+  
+  .tet-timeline a {
+    font-size: 0.8rem;
+  }
+  
+  .memory-stack img {
+    width: 50%;
+  }
+  
+  .section-title h2,
+  .parent-title h2,
+  .me-title h2 {
+    font-size: 1.4rem;
+    padding: 8px 15px;
+    letter-spacing: 2px;
+  }
+  
+  .story-section {
+    margin: 20px auto 60px;
+  }
+  
+  .story-content {
+    padding: 20px 15px;
+  }
+  
+  .story-content p:first-child::first-letter {
+    font-size: 2.5rem;
+  }
+}
