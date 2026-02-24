@@ -1669,3 +1669,97 @@ intro-img {
     font-size: 12px;
   }
 }
+/* Fix tiêu đề h2 quá to & che ảnh trên mobile */
+@media (max-width: 768px) {
+  /* Giảm kích thước chữ & padding cho tất cả tiêu đề overlay */
+  .section-title h2,
+  .parent-title h2,
+  .me-title h2 {
+    font-size: 2.2rem;          /* từ 3.5rem → nhỏ hơn nhiều */
+    padding: 15px 30px;         /* giảm padding ngang/dọc */
+    letter-spacing: 4px;        /* giảm để vừa màn hình */
+    line-height: 1.3;           /* tránh chữ dính nhau */
+    max-width: 90%;             
+    white-space: normal;        /* cho phép xuống dòng nếu cần */
+  }
+
+  /* Đặc biệt cho #toi (gradient) - nhỏ hơn nữa vì to & gradient dễ lỗi */
+  #toi {
+    font-size: 2.8rem;          /* từ 4.2rem xuống */
+    padding: 15px 30px;
+    letter-spacing: 1px;
+  }
+
+  /* Đẩy tiêu đề lên cao hơn một chút để không che giữa ảnh */
+  .section-title,
+  .parent-title,
+  .me-title {
+    top: 30%;                   /* từ 45% lên cao hơn */
+  }
+
+  /* Ảnh stack trên mobile: xếp dọc-> dễ nhìn hơn, tránh bị che */
+  .memory-stack {
+    aspect-ratio: auto;         /* bỏ tỷ lệ cứng */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .memory-stack img {
+    position: static;           /* bỏ absolute chồng chéo */
+    width: 85%;                 /* hoặc 100% nếu muốn full */
+    max-width: 380px;
+    margin: 0 auto;
+    z-index: auto !important;
+    top: auto !important;
+    left: auto !important;
+  }
+}
+
+/* Fix font lỗi & fallback  */
+@media (max-width: 768px) {
+  /* Thêm font fallback tốt hơn cho từng thời kỳ */
+  #ong-ba {
+    font-family: 'Times New Roman', Georgia, serif;
+  }
+
+  #cha-me {
+    font-family: 'Courier New', 'Courier', monospace;
+  }
+
+  #toi {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+
+
+  .section-title h2,
+  .parent-title h2,
+  .me-title h2 {
+    backdrop-filter: none;           
+    background: rgba(255, 255, 255, 0.7); 
+  }
+
+  
+  #toi {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #0072ff; 
+  }
+}
+
+/*chồng ảnh trên tablet nhưng nhỏ hơn */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .memory-stack img {
+    width: 45%;
+  }
+  .section-title h2,
+  .parent-title h2,
+  .me-title h2 {
+    font-size: 2.8rem;
+    padding: 15px 40px;
+  }
+}
