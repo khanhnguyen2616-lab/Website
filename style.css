@@ -1046,6 +1046,185 @@ video{
   border-top: 1px dashed #C41E3A;
 }
 /* ===============================
+   RESPONSIVE FOR HEADER
+================================ */
+
+/* Tablet: thu nhỏ */
+@media (max-width: 900px) {
+  .menu {
+    padding: 10px 20px;
+  }
+  
+  .menu img {
+    height: 4rem;
+  }
+  
+  nav ul {
+    gap: 15px;
+  }
+  
+  nav a {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile: hamburger menu */
+@media (max-width: 768px) {
+  .menu {
+    position: relative;
+    padding: 10px 15px;
+  }
+  
+  .menu img {
+    height: 3.5rem;
+  }
+  
+  /* Ẩn menu mặc định */
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #FFF9F0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    border-radius: 0 0 12px 12px;
+    border-top: 1px solid #C41E3A;
+  }
+
+  .menu.menu-open nav { /* menu đc mở (hamburger)*/
+    max-height: 400px;
+    padding: 15px 0;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  nav li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  nav a {
+    display: block;
+    padding: 12px;
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  nav a::after {
+    display: none;
+  }
+  
+  /* Dropdown trên mobile */
+  .dropdown-content {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: rgba(255, 249, 240, 0.9);
+    box-shadow: none;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    min-width: 100%;
+    border-radius: 0;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    max-height: 200px;
+    padding: 5px 0;
+  }
+  
+  .dropdown-content a {
+    padding: 10px;
+    font-size: 0.95rem;
+    background: rgba(196, 30, 58, 0.03);
+  }
+  
+  .dropdown-content a:hover {
+    background: #C41E3A;
+    color: white;
+  }
+  
+  /* Icon hamburger */
+  .menu-toggle {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1001;
+    margin-left: auto;
+  }
+  
+  .menu-toggle span,
+  .menu-toggle span::before,
+  .menu-toggle span::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #C41E3A;
+    transition: 0.3s;
+    border-radius: 3px;
+    left: 5px;
+  }
+  
+  .menu-toggle span {
+    top: 18px;
+  }
+  
+  .menu-toggle span::before {
+    top: -10px;
+  }
+  
+  .menu-toggle span::after {
+    bottom: -10px;
+  }
+  
+  /* Khi menu mở - icon thành dấu X */
+  .menu.menu-open .menu-toggle span {
+    background: transparent;
+  }
+  
+  .menu.menu-open .menu-toggle span::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  
+  .menu.menu-open .menu-toggle span::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+  }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 480px) {
+  .menu img {
+    height: 3rem;
+  }
+  
+  .menu-toggle {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .menu-toggle span,
+  .menu-toggle span::before,
+  .menu-toggle span::after {
+    width: 25px;
+    left: 2px;
+  }
+}
+/* ===============================
    RESPONSIVE FOR INDEX PAGE
 ================================ */
 @media (max-width: 768px) {
@@ -1374,137 +1553,118 @@ video{
 /* ===============================
    RESPONSIVE FOR MEMORY PAGE
 ================================ */
-@media (max-width: 900px) {
-  .tet-timeline {
-    left: 15px;
-  }
-  
-  .tet-timeline a {
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-  }
-  
-  .memory h1 {
-    font-size: 3rem;
-    letter-spacing: 6px;
-  }
-  
-  .section-title h2,
-  .parent-title h2,
-  .me-title h2 {
-    font-size: 2.5rem;
-    padding: 12px 30px;
-    letter-spacing: 4px;
-  }
+
+.tet-timeline {
+  position: fixed;
+  left: 30px;                
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
 }
 
-@media (max-width: 700px) {
+.tet-timeline ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.tet-timeline a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 13px;           
+  letter-spacing: 0.18em;
+  font-weight: 500;
+  transition: 0.3s;
+  position: relative;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  white-space: nowrap;
+}
+
+.tet-timeline a::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 2px;
+  height: 0;
+  background: #C41E3A;
+  transition: height 0.4s ease;
+}
+
+.tet-timeline a:hover,
+.tet-timeline a:focus {
+  color: #C41E3A;
+}
+
+.tet-timeline a:hover::before,
+.tet-timeline a:focus::before {
+  height: 100%;
+}
+
+/* Responsive: dưới 900px */
+@media (max-width: 900px) {
   .tet-timeline {
-    position: static;
+    position: relative;      
+    left: auto;
+    top: auto;
     transform: none;
-    margin: 30px 0 20px;
-    background: #FFF9F0;
-    padding: 15px 0;
-    border-top: 1px solid #C41E3A;
-    border-bottom: 1px solid #C41E3A;
+    width: 100%;
+    margin: 20px auto 40px;   
+    text-align: center;
+    z-index: auto;
+    background: none;
+    box-shadow: none;
   }
-  
+
   .tet-timeline ul {
     flex-direction: row;
     justify-content: center;
-    gap: 30px;
+    gap: 30px;                
+    flex-wrap: wrap;          
   }
-  
+
+  .tet-timeline li {
+    margin: 0;
+  }
+
   .tet-timeline a {
     writing-mode: horizontal-tb;
-    font-size: 0.9rem;
-    padding: 5px 0;
+    font-size: 12px;             
+    letter-spacing: 0.1em;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(196, 30, 58, 0.08); 
+    color: #666;
+    transition: all 0.3s;
   }
-  
+
+  .tet-timeline a:hover,
+  .tet-timeline a:focus {
+    background: #C41E3A;
+    color: white;
+    transform: scale(1.05);
+  }
+
   .tet-timeline a::before {
-    left: 0;
-    bottom: -5px;
-    top: auto;
-    width: 0;
-    height: 2px;
+    content: none;           
   }
+
   
-  .tet-timeline a:hover::before {
-    width: 100%;
-    height: 2px;
-  }
-  
-  .memory h1 {
-    font-size: 2.5rem;
-    letter-spacing: 4px;
-  }
-  
-  .memory-stack img {
-    width: 45%;
-  }
-  
-  .memory-stack img:nth-child(2) {
-    top: 15%;
-    left: 25%;
-  }
-  
-  .memory-stack img:nth-child(3) {
-    top: 30%;
-    left: 50%;
-  }
-  
-  .section-title h2,
-  .parent-title h2,
-  .me-title h2 {
-    font-size: 2rem;
-    padding: 10px 20px;
-    letter-spacing: 3px;
-  }
-  
-  .story-content {
-    padding: 30px 25px;
-  }
-  
-  .story-content p {
-    font-size: 1rem;
+  .memory {
+    margin-bottom: 0;      
   }
 }
 
-@media (max-width: 480px) {
-  .memory h1 {
-    font-size: 2rem;
-    letter-spacing: 3px;
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .tet-timeline {
+    left: 15px;
   }
-  
-  .tet-timeline ul {
-    gap: 15px;
-  }
-  
   .tet-timeline a {
-    font-size: 0.8rem;
-  }
-  
-  .memory-stack img {
-    width: 50%;
-  }
-  
-  .section-title h2,
-  .parent-title h2,
-  .me-title h2 {
-    font-size: 1.4rem;
-    padding: 8px 15px;
-    letter-spacing: 2px;
-  }
-  
-  .story-section {
-    margin: 20px auto 60px;
-  }
-  
-  .story-content {
-    padding: 20px 15px;
-  }
-  
-  .story-content p:first-child::first-letter {
-    font-size: 2.5rem;
+    font-size: 12px;
   }
 }
