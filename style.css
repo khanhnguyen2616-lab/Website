@@ -389,12 +389,12 @@ video{
     padding: 0;             
 }
 
-.intro-img {
-    flex: 1 1 45%;           /* chiếm 45% bên cạnh */
-    max-width: 500px;        /* giới hạn kích thước ảnh */
-    height: auto;
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+intro-img {
+  width: 100%;                
+  max-width: 500px;         
+  height: auto;               
+  display: block;            
+  border-radius: 8px;       
 }
 .blog-banner{
     background-image: 
@@ -1233,12 +1233,13 @@ video{
   }
   
   .banner h1 span {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   
   .two-column-layout {
     grid-template-columns: 1fr;
     gap: 2rem;
+    margin-inline: 1.2rem;
   }
   
   .three-column-layout {
