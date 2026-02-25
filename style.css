@@ -844,7 +844,304 @@ intro-img {
   margin-top:0;
   color:#C41E3A;
 }
+/* ==========================================
+                TRANG GALLERY 
+   ========================================== */
+.photo-essay {
+    max-width: 1440px;
+    margin: 80px auto 0;
+    padding: clamp(20px, 5vw, 60px) 20px;
+    background: #fcf8f3;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
 
+/* ===== HEADER SECTION ===== */
+.essay-header {
+    text-align: center;
+    margin: clamp(40px, 10vh, 80px) 0 clamp(30px, 6vh, 60px);
+}
+
+.essay-title {
+    font-size: clamp(2.2rem, 8vw, 6rem);
+    font-weight: 300;
+    letter-spacing: clamp(2px, 1vw, 8px);
+    color: #2c1810;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.essay-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    color: #b76e3c;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.essay-subtitle::before,
+.essay-subtitle::after {
+    content: "🎋";
+    font-size: 1.2rem;
+    margin: 0 10px;
+    opacity: 0.5;
+    display: inline-block;
+}
+
+/* ===== CHAPTER COMMON ===== */
+.chapter {
+    margin: clamp(50px, 12vh, 100px) 0;
+    animation: fadeIn 1s ease-out;
+}
+
+.chapter:first-child {
+    margin-top: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== DIVIDER ===== */
+.chapter-divider {
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: #c49a6c;
+    opacity: 0.4;
+    margin: clamp(30px, 6vh, 60px) 0;
+    letter-spacing: 5px;
+}
+
+/* ===== HERO IMAGE ===== */
+.hero-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.hero-image img {
+    width: 100%;
+    height: clamp(300px, 60vh, 700px);
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.hero-image:hover img {
+    transform: scale(1.02);
+}
+
+.hero-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: clamp(20px, 4vh, 40px) clamp(20px, 5vw, 40px);
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* ===== DUO LAYOUT ===== */
+.duo-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 440px));
+    gap: clamp(20px, 3vw, 30px);
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.duo-item {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    aspect-ratio: 4/5;
+    width: 100%;
+}
+
+.duo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.duo-item:hover img {
+    transform: scale(1.05);
+}
+
+.duo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(44, 24, 16, 0.9));
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.duo-item:hover .duo-caption {
+    transform: translateY(0);
+}
+
+.duo-note {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #b76e3c;
+    margin-top: 15px;
+}
+
+/* ===== VIDEO CHAPTER ===== */
+.video-chapter {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.video-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    aspect-ratio: 9/16;
+    width: 100%;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-overlay {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.play-btn {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    color: #c41e3a;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+}
+
+.play-btn:hover {
+    background: #c41e3a;
+    color: white;
+    transform: scale(1.1);
+}
+
+.video-note {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #6b4e31;
+    font-style: italic;
+}
+
+/* ===== TRIPTYCH ===== */
+.triptych {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.triptych-item {
+    position: relative;
+    aspect-ratio: 3/4;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.triptych-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.triptych-item:hover img {
+    transform: scale(1.07);
+}
+
+.triptych-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px;
+    background: rgba(44, 24, 16, 0.8);
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    backdrop-filter: blur(2px);
+}
+
+/* ===== OUTRO ===== */
+.essay-outro {
+    text-align: center;
+    padding: clamp(50px, 10vh, 80px) 20px;
+    margin-top: 60px;
+    background: linear-gradient(to bottom, #fcf8f3, #f0e6d8);
+    border-radius: 40px 40px 0 0;
+    position: relative;
+}
+
+.outro-quote {
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    font-style: italic;
+    color: #2c1810;
+    line-height: 1.3;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.outro-quote::before {
+    content: "“";
+    font-size: clamp(4rem, 10vw, 6rem);
+    color: #c49a6c;
+    opacity: 0.25;
+    position: absolute;
+    left: -30px;
+    top: -30px;
+}
+
+.outro-date {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    letter-spacing: 4px;
+    color: #8b6b4c;
+    text-transform: uppercase;
+}
 /* ===============================
           TRANG KÍ ỨC
 ================================ */
@@ -1762,4 +2059,442 @@ intro-img {
     font-size: 2.8rem;
     padding: 15px 40px;
   }
+}
+/* ===============================
+   RESPONSIVE FOR GALLERY PAGE
+================================ */
+
+/* Large Desktop (1200px+) */
+@media screen and (min-width: 1200px) {
+    .duo-layout {
+        gap: 40px;
+    }
+    
+    .duo-item {
+        aspect-ratio: 3/4;
+    }
+    
+    .video-chapter {
+        max-width: 550px;
+    }
+}
+
+/* Tablet Landscape (992px - 1199px) */
+@media screen and (max-width: 1199px) {
+    .photo-essay {
+        margin-top: 70px;
+    }
+    
+    .hero-image img {
+        height: 55vh;
+    }
+    
+    .duo-layout {
+        grid-template-columns: repeat(2, minmax(250px, 400px));
+    }
+    
+    .triptych {
+        gap: 15px;
+    }
+}
+
+/* Tablet Portrait (768px - 991px) */
+@media screen and (max-width: 991px) {
+    .photo-essay {
+        margin-top: 60px;
+        padding: 20px;
+    }
+    
+    .essay-header {
+        margin: 30px 0 40px;
+    }
+    
+    .essay-title {
+        font-size: 3rem;
+    }
+    
+    .essay-subtitle::before,
+    .essay-subtitle::after {
+        margin: 0 8px;
+        font-size: 1rem;
+    }
+    
+    .hero-image img {
+        height: 45vh;
+    }
+    
+    .hero-caption {
+        font-size: 1.3rem;
+        padding: 15px;
+    }
+    
+    .duo-layout {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0;
+    }
+    
+    .duo-item {
+        aspect-ratio: 3/4;
+    }
+    
+    .duo-caption {
+        transform: translateY(0);
+        background: linear-gradient(transparent, rgba(44, 24, 16, 0.9));
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+    
+    .duo-item:hover .duo-caption {
+        transform: translateY(0);
+    }
+    
+    .video-chapter {
+        max-width: 400px;
+    }
+    
+    .play-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 1.6rem;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .triptych {
+        gap: 12px;
+        padding: 0;
+    }
+    
+    .triptych-label {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    .outro-quote::before {
+        left: -20px;
+        top: -20px;
+    }
+}
+
+/* Mobile Landscape (576px - 767px) */
+@media screen and (max-width: 767px) {
+    .photo-essay {
+        margin-top: 50px;
+        padding: 15px;
+    }
+    
+    .essay-header {
+        margin: 20px 0 30px;
+    }
+    
+    .essay-title {
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+    }
+    
+    .essay-subtitle {
+        font-size: 1rem;
+    }
+    
+    .essay-subtitle::before,
+    .essay-subtitle::after {
+        display: none;
+    }
+    
+    .chapter {
+        margin: 40px 0;
+    }
+    
+    .chapter-divider {
+        margin: 25px 0;
+        font-size: 1.8rem;
+        letter-spacing: 3px;
+    }
+    
+    .hero-image {
+        border-radius: 16px;
+    }
+    
+    .hero-image img {
+        height: 40vh;
+    }
+    
+    .hero-caption {
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+    
+    /* Duo chuyển thành 1 cột */
+    .duo-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 500px;
+    }
+    
+    .duo-item {
+        aspect-ratio: 16/9;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .duo-note {
+        font-size: 1.1rem;
+        margin-top: 10px;
+    }
+    
+    .video-chapter {
+        max-width: 350px;
+    }
+    
+    .video-container {
+        border-radius: 16px;
+    }
+    
+    .play-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
+        bottom: 12px;
+        right: 12px;
+    }
+    
+    .video-note {
+        font-size: 0.95rem;
+    }
+    
+    /* Triptych chuyển thành 1 cột */
+    .triptych {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        max-width: 450px;
+    }
+    
+    .triptych-item {
+        aspect-ratio: 16/9;
+    }
+    
+    .triptych-label {
+        padding: 12px;
+        font-size: 1rem;
+    }
+    
+    .essay-outro {
+        padding: 40px 15px;
+        margin-top: 40px;
+        border-radius: 30px 30px 0 0;
+    }
+    
+    .outro-quote {
+        font-size: 1.8rem;
+    }
+    
+    .outro-quote::before {
+        font-size: 4rem;
+        left: -10px;
+        top: -15px;
+    }
+    
+    .outro-date {
+        letter-spacing: 3px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile Portrait (480px - 575px) */
+@media screen and (max-width: 575px) {
+    .photo-essay {
+        margin-top: 45px;
+        padding: 12px;
+    }
+    
+    .essay-title {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+    
+    .essay-subtitle {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+    
+    .hero-image {
+        border-radius: 12px;
+    }
+    
+    .hero-image img {
+        height: 35vh;
+    }
+    
+    .hero-caption {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    
+    .duo-item {
+        aspect-ratio: 4/3;
+    }
+    
+    .duo-caption {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    .duo-note {
+        font-size: 1rem;
+    }
+    
+    .video-chapter {
+        max-width: 280px;
+    }
+    
+    .play-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+    
+    .video-note {
+        font-size: 0.9rem;
+    }
+    
+    .triptych-item {
+        aspect-ratio: 4/3;
+    }
+    
+    .triptych-label {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    .essay-outro {
+        padding: 30px 12px;
+    }
+    
+    .outro-quote {
+        font-size: 1.6rem;
+    }
+    
+    .outro-quote::before {
+        font-size: 3.5rem;
+    }
+    
+    .outro-date {
+        letter-spacing: 2px;
+        font-size: 0.8rem;
+    }
+    
+    .chapter-divider {
+        font-size: 1.5rem;
+        margin: 20px 0;
+    }
+}
+
+/* Small Mobile (dưới 380px) */
+@media screen and (max-width: 379px) {
+    .photo-essay {
+        margin-top: 40px;
+        padding: 10px;
+    }
+    
+    .essay-title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-image img {
+        height: 30vh;
+    }
+    
+    .hero-caption {
+        font-size: 0.9rem;
+    }
+    
+    .duo-item {
+        aspect-ratio: 1/1;
+    }
+    
+    .video-chapter {
+        max-width: 240px;
+    }
+    
+    .play-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .triptych-item {
+        aspect-ratio: 1/1;
+    }
+    
+    .outro-quote {
+        font-size: 1.4rem;
+    }
+}
+
+/* Landscape mode trên mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .hero-image img {
+        height: 80vh;
+    }
+    
+    .video-container {
+        max-width: 300px;
+        aspect-ratio: 16/9;
+    }
+    
+    .duo-item {
+        aspect-ratio: 16/9;
+    }
+    
+    .triptych-item {
+        aspect-ratio: 16/9;
+    }
+}
+
+/* Hiệu ứng hover trên mobile  */
+@media (hover: hover) {
+    .duo-item:hover .duo-caption {
+        transform: translateY(0);
+    }
+}
+
+/* Accessibility - giảm chuyển động */
+@media (prefers-reduced-motion: reduce) {
+    .chapter,
+    img,
+    .duo-caption,
+    .play-btn {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Loading state cho ảnh */
+img {
+    background: #e6d5b8;
+    min-height: 100px;
+    display: block;
+}
+
+/* Active menu highlight */
+.active {
+    color: #c41e3a;
+    font-weight: bold;
+}
+
+/* Fix cho dropdown menu trên mobile */
+@media screen and (max-width: 768px) {
+    .dropdown-content {
+        position: static;
+        display: none;
+        background: #f9f1e0;
+        box-shadow: none;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 }
