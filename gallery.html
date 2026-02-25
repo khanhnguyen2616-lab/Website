@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>Photo Essay - Hơi Ấm Quê Nhà</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <img src="Images/logo.webp" alt="Logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="gioithieu.html">Giới thiệu</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-btn">Khám phá tết</a>
+                        <div class="dropdown-content">
+                            <a href="phongtuc.html">Phong tục</a>
+                            <a href="monan.html">Ẩm thực</a>
+                            <a href="vanhoa.html">Văn hoá</a>
+                        </div>
+                    </li>
+                    <li><a href="kyuc.html">Ký ức</a></li>
+                    <li><a href="gallery.html" class="active">Ảnh và video</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="photo-essay">
+        <!-- Header của photo essay -->
+        <div class="essay-header">
+            <h1 class="essay-title">Hơi Ấm Quê Nhà</h1>
+            <p class="essay-subtitle">Một câu chuyện Tết bằng ảnh</p>
+        </div>
+
+        <!-- Chapter 1: Hero Image -->
+        <section class="chapter">
+            <div class="hero-image">
+                <img src="Images/galleryAnhDuongQue.png" alt="Con đường quê ngày Tết">
+                <div class="hero-caption">
+                    "Ngày Tết, con đường về nhà"
+                </div>
+            </div>
+        </section>
+
+        <div class="chapter-divider">🎋 🎋 🎋</div>
+
+        <!-- Chapter 2: Duo Layout -->
+        <section class="chapter">
+            <div class="duo-layout">
+                <div class="duo-item">
+                    <img src="Images/gallerygoibanhchung.png" alt="Gói bánh chưng">
+                    <div class="duo-caption">
+                        Bàn tay mẹ gói bánh
+                    </div>
+                </div>
+                <div class="duo-item">
+                    <img src="Images/galleryNauBanhChung.webp" alt="Nấu bánh chưng">
+                    <div class="duo-caption">
+                        Lửa bập bùng đêm 30
+                    </div>
+                </div>
+                <div class="duo-note">
+                    "Hương vị đầu tiên của mùa xuân"
+                </div>
+            </div>
+        </section>
+
+        <div class="chapter-divider">🎋 🎋 🎋</div>
+
+        <!-- Chapter 3: Video -->
+        <section class="chapter">
+            <div class="video-chapter">
+                <div class="video-container">
+                    <video loop muted playsinline poster="Images/phaoHoa.jpg">
+                        <source src="Videos/banPhaoBong.mp4" type="video/mp4">
+                        <img src="Images/phaoHoa.jpg" alt="Video Tết">
+                    </video>
+                    <div class="video-overlay">
+                        <button class="play-btn" aria-label="Play video">▶</button>
+                    </div>
+                </div>
+                <p class="video-note">Khoảnh khắc giao thừa</p>
+            </div>
+        </section>
+
+        <div class="chapter-divider">🎋 🎋 🎋</div>
+
+        <!-- Chapter 4: Triptych -->
+        <section class="chapter">
+            <div class="triptych">
+                <div class="triptych-item">
+                    <img src="Images/ galleryDiChua.png" alt="Đi chùa">
+                    <div class="triptych-label">Đi chùa</div>
+                </div>
+                <div class="triptych-item">
+                    <img src="Images/food.jpg" alt="Mâm cơm">
+                    <div class="triptych-label">Mâm cơm</div>
+                </div>
+                <div class="triptych-item">
+                    <img src="Images/chucTet.jpg" alt="Thăm ông bà">
+                    <div class="triptych-label">Thăm ông bà</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="chapter-divider">🎋 🎋 🎋</div>
+        <!-- Outro -->
+        <footer class="essay-outro">
+            <p class="outro-quote">
+                Tết là để trở về
+            </p>
+            <p class="outro-date">
+                THANH HÓA • 2026
+            </p>
+        </footer>
+    </main>
+
+    <script>
+        // Simple video play/pause functionality
+        document.querySelector('.play-btn')?.addEventListener('click', function(e) {
+            const video = this.closest('.video-container').querySelector('video');
+            if (video.paused) {
+                video.play();
+                this.textContent = '❚❚';
+            } else {
+                video.pause();
+                this.textContent = '▶';
+            }
+        });
+    </script>
+</body>
+</html>
